@@ -1,1 +1,32 @@
-/.node-persist
+# Dependencies
+node_modules/
+
+# WhatsApp session / Chrome user-data created by @open-wa
+_IGNORE_*/
+_IGNORE_*
+
+# Session data (contains tokens once you log in)
+session.data.json
+
+# Environment variables
+.env
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Build artifacts (if you add any)
+dist/
+build/
+coverage/
+
+# OS/editor junk
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
