@@ -16,6 +16,13 @@ create({
 }).then((client) => start(client));
 
 function start(client) {
+  console.log("🚀 WhatsApp client started! Listening for messages...");
+  
+  // Monitor connection status
+  client.onStateChanged((state) => {
+    console.log(`📱 WhatsApp state changed: ${state}`);
+  });
+  
   client.onMessage(async (message) => {
     if (message.body && !message.isGroupMsg) {
       console.log(
@@ -48,7 +55,8 @@ function start(client) {
             true
           );
         } catch (error) {
-          console.error("Error downloading media:", error);
+          console.error("Error loading message history:", error);
+          messageHistory = [];
         }
         const payload = {
           from: message.sender.formattedName || message.sender.id,
