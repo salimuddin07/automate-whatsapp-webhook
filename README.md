@@ -112,13 +112,25 @@ return items.map((item) => {
 ```powershell
 cd "C:\MyPersonelProjects\automate whatsapp webhook"
 npm i -g pm2 pm2-windows-startup
-pm2 start index.js --name wa-webhook --time
+
+# Start with ecosystem file (uses name: automate-whatsapp-webhook)
+npm run pm2:start
+
+# Persist across reboots
 pm2 save
 pm2-startup install
-# manage:
-pm2 status
-pm2 logs wa-webhook
-pm2 restart wa-webhook
+
+# Manage
+pm2 ls
+npm run pm2:logs    # or: pm2 logs automate-whatsapp-webhook
+npm run pm2:restart # or: pm2 restart automate-whatsapp-webhook
+npm run pm2:stop    # or: pm2 stop automate-whatsapp-webhook
+npm run pm2:delete  # or: pm2 delete automate-whatsapp-webhook
+```
+
+Alternative (no ecosystem file):
+```powershell
+pm2 start index.js --name automate-whatsapp-webhook --time
 ```
 
 ### Option B: Windows Service (NSSM)
