@@ -3,7 +3,7 @@ import fetch from "node-fetch";
 
 // Replace with your actual n8n webhook URL
 const N8N_WEBHOOK_URL =
-  "https://n8n.moazzammalek.com/webhook-test/913499f8-2092-41f5-ae50-a3b75de74895";
+  "https://enter your n8n webhook url";
 
 create({
   sessionId: "79a47160-9af8-4a35-8813-feaa2408ee45",
